@@ -49,8 +49,7 @@ const BuyTicket = () => {
         phone: ''
       });
 
-      navigate('')
-
+      navigate('/alert')
   };
 
 

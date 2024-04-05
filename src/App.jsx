@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Billboard from "./components/Billboard";
 import Ticket from "./components/TicketPurchase";
 import BuyTicket from "./components/TicketPurchase/BuyTicket";
+import Alert from "./components/Alert";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/billboard' element={<Billboard />} />
           <Route path='/ticket'  element={<Ticket />} />
           <Route path='/buyTicket' element={<BuyTicket />} />
+          <Route path='/alert' element={<Alert />} />
         </Routes>
       </HashRouter>
     </>
