@@ -29,7 +29,7 @@ const Carrusel = () => {
 
   return (
     <>
-      <div className=" w-full py-5">
+      <div className=" w-full py-5 ">
         <Swiper
           effect={"coverflow"}
           grabCursor
@@ -49,7 +49,7 @@ const Carrusel = () => {
             Scrollbar,
             Autoplay,
           ]}
-          className="mySwiper "
+          className="mySwipe"
           loop={true}
           spaceBetween={50}
           navigation
@@ -63,8 +63,8 @@ const Carrusel = () => {
           scrollbar={{ draggable: true }}
         >
           <SwiperSlide className="slider-item ">
-            <div className="flex w-full h-full ">
-              <div className="ml-32  xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
+            <div className="flex w-full h-full  sm:px-20 md:px-20 lg:px-20 ">
+              <div className="ml-32 xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
                 <div>
                   <img
                     src={jho}
@@ -118,8 +118,8 @@ const Carrusel = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider-item">
-            <div className="flex w-full h-full">
-              <div className="ml-32  xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
+            <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
+              <div className="ml-32 xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
                 <div>
                   <img
                     src={legend}
@@ -173,7 +173,7 @@ const Carrusel = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider-item">
-            <div className="flex w-full h-full">
+            <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
               <div className="ml-32  xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
                 <div>
                   <img
