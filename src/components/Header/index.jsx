@@ -19,11 +19,10 @@ const Header = () => {
 
       <div className="flex gap-5 py-2 mr-7">
         <Link
-          to=""
+          to="/reviews"
           className="text-gray-500 hover:text-white font-normal text-md items-center justify-center mt-2"
         >
-          {" "}
-          Destacadas{" "}
+          Destacadas
         </Link>
 
         <Link

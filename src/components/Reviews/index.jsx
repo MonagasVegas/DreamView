@@ -1,13 +1,11 @@
-import React from 'react'
+import ContainerPop from "../ContainerPop";
 
 const Reviews = () => {
   return (
     <div>
-
-
-        
+      <ContainerPop />
     </div>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;
