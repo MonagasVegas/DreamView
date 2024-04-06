@@ -7,7 +7,6 @@ const Input = ({ label, name, value, onChange }) => {
     <div className="input-field">
       <input
         type="text"
-        required
         name={name}
         value={value}
         onChange={onChange}

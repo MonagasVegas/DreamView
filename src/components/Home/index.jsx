@@ -1,3 +1,4 @@
+import CurrentBillboard from "../Billboard/CurrentBillboard";
 import Carrusel from "../Carrusel";
 import Header from "../Header";
 
@@ -10,6 +11,10 @@ const Home = () => {
 
       <div>
         <Carrusel />
+      </div>
+
+      <div>
+        <CurrentBillboard />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Billboard from "./components/Billboard";
 import Ticket from "./components/TicketPurchase";
 import BuyTicket from "./components/TicketPurchase/BuyTicket";
 import Alert from "./components/Alert";
+import BuyFunction from "./components/TicketPurchase/BuyFunction";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/ticket'  element={<Ticket />} />
           <Route path='/buyTicket' element={<BuyTicket />} />
           <Route path='/alert' element={<Alert />} />
+          <Route path='/buyFunction' element={<BuyFunction />} />
         </Routes>
       </HashRouter>
     </>
