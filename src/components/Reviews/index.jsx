@@ -3,7 +3,11 @@ import ContainerPop from "../ContainerPop";
 const Reviews = () => {
   return (
     <div>
-      <ContainerPop />
+      <ContainerPop 
+      title='Reseña de peliculas'
+      subtitle='Deja tu opinión'
+      
+      />
     </div>
   );
 };
