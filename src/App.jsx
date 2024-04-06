@@ -1,7 +1,7 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
-import Carrusel from "./components/Carrusel";
+import Billboard from "./components/Billboard";
 
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-         
-
+          <Route path='/billboard' element={<Billboard />} />
         </Routes>
       </HashRouter>
     </>
