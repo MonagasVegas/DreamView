@@ -35,12 +35,12 @@ const Reviews = () => {
                   </div>
 
                   <div className=" ml-5 flex items-center justify-center gap-2 w-96 xs: flex-col sm:flex-row md:flex lg:flex-row xl:flex-row">
-                    <button
-                      className="py-2 w-1/2 sm:w-80 lg:w-80 font-semibold rounded-md border-2 border-primary text-white"
-                      type="submit"
+                    <Link
+                      to="/reviewAlert"
+                      className="py-2 flex justify-center w-1/2 sm:w-80 lg:w-80 font-semibold rounded-md border-2 border-primary text-white"
                     >
                       Finalizar
-                    </button>
+                    </Link>
 
                     <Link
                       to="/"
