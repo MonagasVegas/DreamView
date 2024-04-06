@@ -1,9 +1,18 @@
-import React from 'react'
+import Carrusel from "../Carrusel";
+import Header from "../Header";
 
 const Home = () => {
   return (
-    <div>index</div>
-  )
-}
+    <div className="w-full">
+      <div>
+        <Header />
+      </div>
 
-export default Home
+      <div>
+        <Carrusel />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
