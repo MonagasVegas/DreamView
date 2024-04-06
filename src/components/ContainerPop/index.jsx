@@ -10,7 +10,7 @@ const ContainerPop = ({ title, subtitle, body }) => {
         </span>
       </div>
 
-      <div className="flex justify-center w-full py-5">{body}</div>
+      <div className="flex justify-center w-full ">{body}</div>
     </div>
   );
 };

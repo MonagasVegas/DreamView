@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 import eticket from "../../assets/images/eticket.png";
 
 const Alert = () => {
+  const { state } = useLocation();
+
+  const formattedDate = new Date(state.date).toISOString().split("T")[0];
+  const date = new Date(state.date);
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+
   return (
     <div className="bg-[#282828] fixed top-0 left-0 w-screen h-screen ">
       <div className="py-[100px] ">
@@ -10,7 +19,7 @@ const Alert = () => {
             Comprar ticket
           </h3>
           <h1 className="text-3xl font-bold mb-4 text-white">
-            ¡Felicitaciones Juan!
+            ¡Felicitaciones {state.name}!
           </h1>
         </div>
 
@@ -20,10 +29,10 @@ const Alert = () => {
 
         <div className="flex flex-col justify-center items-center py-2">
           <span className="font-normal not-italic text-lg text-white">
-            Tu entrada para la función{" "}
+            Tu entrada para la función {formattedDate}
           </span>
           <span className="font-normal not-italic text-lg text-white ">
-            a las ha sido canjeada.{" "}
+            a las {`${hour} : ${minute}`} ha sido canjeada.
           </span>
         </div>
 

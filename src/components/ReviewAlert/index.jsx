@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import glowingstar from "../../assets/images/glowingstar.png";
+import { useLocation } from "react-router-dom";
+
 
 const ReviewAlert = () => {
+  const { state } = useLocation();
+  console.log("🐉 ~ ReviewAlert ~ state:", state)
+
   return (
     <div className="bg-[#282828] fixed top-0 left-0 w-screen h-screen ">
       <div className="py-[100px] ">
@@ -10,7 +15,7 @@ const ReviewAlert = () => {
             Reseña de peliculas
           </h3>
           <h1 className="text-3xl font-bold mb-4 text-white">
-            ¡Muchas gracias Juan!
+            ¡Muchas gracias {state.data.name}!
           </h1>
         </div>
 
@@ -20,7 +25,7 @@ const ReviewAlert = () => {
 
         <div className="flex flex-col justify-center items-center py-2">
           <span className="font-normal not-italic text-lg text-white">
-            Tu reseña sobre la pelicula Jonh Wick 4
+            Tu reseña sobre la pelicula 
           </span>
           <span className="font-normal not-italic text-lg text-white ">
             ha sido enviada.

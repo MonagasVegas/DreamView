@@ -1,9 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ContainerPop from "../ContainerPop";
-import Input from "../Input";
 import Header from "../Header";
+import InputSelect from "../InputSelect";
+import { useEffect, useState } from "react";
+import { getFilms } from "../../services/getFilms";
+import { useForm } from "react-hook-form";
 
 const Reviews = () => {
+  const navigate = useNavigate();
+  const [filmsData, setfilmsData] = useState([]);
+
+  useEffect(() => {
+    getFilms()
+      .then((res) => {
+        const response = res.data;
+        setfilmsData(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = handleSubmit((data) => {
+    
+    navigate("/reviewAlert", { state: { data } });
+  });
+
   return (
     <>
       <div>
@@ -15,39 +43,111 @@ const Reviews = () => {
           subtitle="Deja tu opinión"
           body={
             <>
-              <div className="flex justify-center w-full py-5">
+              <div className="flex justify-center w-full ">
                 <form
-                  // onSubmit={handleSubmit}
+                  onSubmit={onSubmit}
                   className="flex flex-col justify-center gap-5 w-10/12 xs:w-1/3 sm:w-10/12 md:w-1/3 lg:w-1/3 xl:w-1/3"
                 >
                   <div>
-                    <Input name="movie" label="Seleccione pelicula" />
-                  </div>
-                  <div>
-                    <Input label="Nombre completo" name="name" />
-                  </div>
-                  <div>
-                    <Input label="E-mail" name="mail" />
+                    <InputSelect
+                      name="film"
+                      values={filmsData.map((data) => data.Title)}
+                      label="Seleccione pelicula"
+                    />
                   </div>
 
-                  <div>
-                    <Input label="Reseña" name="description" />
+                  <div className="input-field">
+                    <label>Nombre completo</label>
+                    <input
+                      type="text"
+                      {...register("name", {
+                        required: {
+                          value: true,
+                          message: "Campo requerido, debe ingresar un nombre.",
+                        },
+                        minLength: {
+                          value: 4,
+                          message: "Debe ingresar mínimo 4 caracteres.",
+                        },
+                        maxLength: {
+                          value: 30,
+                          message: "Debe ingresar máaximo 20 caracteres.",
+                        },
+                      })}
+                    />
+                    {errors.name && (
+                      <p className="text-red-700 font-semibold text-xs py-2 px-3">
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div className=" ml-5 flex items-center justify-center gap-2 w-96 xs: flex-col sm:flex-row md:flex lg:flex-row xl:flex-row">
-                    <Link
-                      to="/reviewAlert"
-                      className="py-2 flex justify-center w-1/2 sm:w-80 lg:w-80 font-semibold rounded-md border-2 border-primary text-white"
-                    >
-                      Finalizar
-                    </Link>
+                  <div className="input-field">
+                    <label>E-mail</label>
+                    <input
+                      type="text"
+                      {...register("email", {
+                        required: {
+                          value: true,
+                          message: "Campo requerido, debe ingresar un correo.",
+                        },
+                        pattern: {
+                          value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                          message: "Correo no válido",
+                        },
+                      })}
+                    />
+                    {errors.email && (
+                      <p className="text-red-700 font-semibold text-xs py-2 px-3">
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
 
-                    <Link
-                      to="/"
-                      className="flex items-center py-3 justify-center w-full text-gray-400 font-normal text-md  hover:text-gray-600"
-                    >
-                      Reiniciar
-                    </Link>
+                  <div className="input-field">
+                    <label>Reseña</label>
+                    <input
+                      type="text"
+                      {...register("description", {
+                        required: {
+                          value: true,
+                          message: "Campo requerido, debe ingresar una reseña.",
+                        },
+                        minLength: {
+                          value: 10,
+                          message: "Debe ingresar mínimo 10 caracteres.",
+                        },
+                        maxLength: {
+                          value: 20,
+                          message: "Debe ingresar máaximo 20 caracteres.",
+                        },
+                      })}
+                    />
+                    {errors.name && (
+                      <p className="text-red-700 font-semibold text-xs py-2 px-3">
+                        {errors.name.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-center gap-2 w-full xs: flex-col sm:flex-row md:flex lg:flex-row xl:flex-row">
+                    <div className="w-56">
+                      <button
+                        className="py-2 w-full font-semibold rounded-md text-white  border-2 border-primary"
+                        type="submit"
+                      >
+                        Finalizar
+                      </button>
+                    </div>
+
+                    <div className="w-56">
+                      <Link
+                        to="/"
+                        className=" w-full flex items-center py-3 justify-center  text-gray-400 font-normal text-md  hover:text-gray-600"
+                      >
+                        Reiniciar
+                      </Link>
+                    </div>
                   </div>
                 </form>
               </div>
