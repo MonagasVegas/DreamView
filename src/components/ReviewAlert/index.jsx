@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import glowingstar from "../../assets/images/glowingstar.png";
 
 const ReviewAlert = () => {
@@ -24,6 +25,15 @@ const ReviewAlert = () => {
           <span className="font-normal not-italic text-lg text-white ">
             ha sido enviada.
           </span>
+        </div>
+
+        <div className="w-full flex justify-center py-10">
+          <Link
+            to="/"
+            className="py-2 flex justify-center w-40 font-semibold rounded-md border-2 border-primary text-white"
+          >
+            Ir al inicio
+          </Link>
         </div>
       </div>
     </div>
