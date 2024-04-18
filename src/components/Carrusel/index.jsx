@@ -31,45 +31,45 @@ const Carrusel = () => {
     <>
       <div className=" w-full py-5 ">
         <Swiper
-          effect={"coverflow"}
-          grabCursor
-          centeredSlides
-          slidesPerView={1}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          modules={[
-            EffectCoverflow,
-            Pagination,
-            Navigation,
-            Scrollbar,
-            Autoplay,
-          ]}
+          // effect={"coverflow"}
+          // grabCursor
+          // centeredSlides
+          // slidesPerView={1}
+          // coverflowEffect={{
+          //   rotate: 50,
+          //   stretch: 0,
+          //   depth: 100,
+          //   modifier: 1,
+          //   slideShadows: true,
+          // }}
+          // modules={[
+          //   EffectCoverflow,
+          //   Pagination,
+          //   Navigation,
+          //   Scrollbar,
+          //   Autoplay,
+          // ]}
           className="mySwipe"
-          loop={true}
+           loop={true}
           spaceBetween={50}
-          navigation
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          scrollbar={{ draggable: true }}
+         navigation
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: false,
+          // }}
+          // pagination={{
+          //   clickable: true,
+          // }}
+          // scrollbar={{ draggable: true }}
         >
           <SwiperSlide className="slider-item ">
-            <div className="flex w-full h-full  sm:px-20 md:px-20 lg:px-20 ">
-              <div className="ml-32 xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
+            <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
+              <div className=" w-full  lg:relative">
                 <div>
                   <img
                     src={jho}
                     alt=""
-                    className=" w-52 xs:w-52 md:w-56 md:absolute lg:w-56 lg:absolute"
+                    className=" w-full md:w-56 md:absolute lg:w-56 lg:absolute"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ const Carrusel = () => {
           </SwiperSlide>
           <SwiperSlide className="slider-item">
             <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
-              <div className="ml-32 xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
+              <div className=" w-full lg:relative">
                 <div>
                   <img
                     src={legend}
@@ -174,7 +174,7 @@ const Carrusel = () => {
           </SwiperSlide>
           <SwiperSlide className="slider-item">
             <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
-              <div className="ml-32  xs:ml-32 sm:ml-0 md:ml-0 lg:ml-0 lg:relative">
+              <div className="w-full lg:relative">
                 <div>
                   <img
                     src={avengers}
