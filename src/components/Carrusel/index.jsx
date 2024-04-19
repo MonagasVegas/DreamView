@@ -31,36 +31,36 @@ const Carrusel = () => {
     <>
       <div className=" w-full py-5 ">
         <Swiper
-          // effect={"coverflow"}
-          // grabCursor
-          // centeredSlides
-          // slidesPerView={1}
-          // coverflowEffect={{
-          //   rotate: 50,
-          //   stretch: 0,
-          //   depth: 100,
-          //   modifier: 1,
-          //   slideShadows: true,
-          // }}
-          // modules={[
-          //   EffectCoverflow,
-          //   Pagination,
-          //   Navigation,
-          //   Scrollbar,
-          //   Autoplay,
-          // ]}
+          effect={"coverflow"}
+          grabCursor
+          centeredSlides
+          slidesPerView={1}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Navigation,
+            Scrollbar,
+            Autoplay,
+          ]}
           className="mySwipe"
            loop={true}
           spaceBetween={50}
          navigation
-          // autoplay={{
-          //   delay: 2500,
-          //   disableOnInteraction: false,
-          // }}
-          // pagination={{
-          //   clickable: true,
-          // }}
-          // scrollbar={{ draggable: true }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          scrollbar={{ draggable: true }}
         >
           <SwiperSlide className="slider-item ">
             <div className="flex w-full h-full sm:px-20 md:px-20 lg:px-20">
