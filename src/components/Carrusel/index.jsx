@@ -124,7 +124,7 @@ const Carrusel = () => {
                   <img
                     src={legend}
                     alt=""
-                    className=" w-52 xs:w-52 md:w-56 md:absolute lg:w-56 lg:absolute"
+                    className="w-full md:w-56 md:absolute lg:w-56 lg:absolute"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ const Carrusel = () => {
                   <img
                     src={avengers}
                     alt=""
-                    className=" w-52 xs:w-52 md:w-56 md:absolute lg:w-56 lg:absolute"
+                    className="w-full md:w-56 md:absolute lg:w-56 lg:absolute"
                   />
                 </div>
 
